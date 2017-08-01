@@ -8,6 +8,25 @@ The new clients are `google-cloud-*`. They are in the process of adopting the la
 >
 > https://github.com/GoogleCloudPlatform/google-cloud-go/issues/266#issuecomment-221083266
 
+# API client summary
+
+Google API clients (`google-api-*-client`)
+- Low level
+- Auto generated
+- Made for JSON REST APIs
+- Older project - [maintence mode](https://github.com/GoogleCloudPlatform/google-cloud-ruby/issues/1604#issuecomment-316834237)
+
+Google APIs toolkit (`googleapis/toolkit`)
+- Low level
+- Auto generated
+- Made for gRPC APIs
+- New project - actively developed
+
+Google Cloud libraries (`google-cloud-*`)
+- High level
+- Hand written
+- [Built on top of the low level clients](https://github.com/GoogleCloudPlatform/google-cloud-ruby/issues/1604#issuecomment-316841696)
+
 # google-api-client - `maintenance mode`
 
 - [google-api-nodejs-client](https://github.com/google/google-api-nodejs-client)
@@ -27,7 +46,8 @@ The new clients are `google-cloud-*`. They are in the process of adopting the la
 
 - [apis-client-generator](https://github.com/google/apis-client-generator)
   - Java, C++, C#, GWT, PHP, Dart
-  - No new code since May 2017
+  - Used to generate `google-api-java-client`
+  - No new code since May 2017.
 
 # apitools - `maintenance mode`
 
@@ -53,3 +73,25 @@ The latest code generation tech from Google.
 
 - [googleapis/toolkit](https://github.com/googleapis/toolkit)
 - [googleapis/api-compiler](https://github.com/googleapis/api-compiler)
+
+---
+
+# Generating Java APIs with `apis-client-generator`
+
+Install Google API client generator from source. The last relase was in 2013 and is broken.
+
+```
+git clone https://github.com/google/apis-client-generator.git
+pip install .
+```
+
+Generate the library manually:
+
+```
+ generate_library \
+    --input=./testing_v1.json \
+    --language=java \
+    --output_dir=./testing
+```
+
+Alternatively, generate the library by running `generate.sh`

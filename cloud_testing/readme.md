@@ -17,6 +17,9 @@ The discovery JSON is useful for understanding APIs and producing clients automa
 - [testing/v1](https://www.googleapis.com/discovery/v1/apis/testing/v1/rest) or [testing](https://testing.googleapis.com/$discovery/rest?version=v1)
 - [storage/v1](https://www.googleapis.com/discovery/v1/apis/storage/v1/rest)
 - `google-cloud-sdk\lib\googlecloudsdk\third_party\apis` contains the JSON descriptions locally
+  - `storage_v1.json`
+  - `toolresults_v1beta3.json`
+  - `testing_v1.json`
 
 See [client generation](client_generation.md) for more information.
 
@@ -41,19 +44,12 @@ Published on [maven central](https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22
 
 ## google-api-services-testing
 
-[Apache licensed](https://android.googlesource.com/platform/tools/studio/google/cloud/testing/+/studio-master-dev/firebase-testing/lib/licenses/google-api-services-testing.jar-NOTICE) `google-api-services-testing` extracted from [the open source Android Studio repo.](https://android.googlesource.com/platform/tools/studio/google/cloud/testing/+/studio-master-dev/firebase-testing/lib) Not published to maven central.
+Generated automatically from `gcloud-cli/googlecloudsdk/third_party/apis/testing_v1.json` using the master branch of [apis-client-generator](https://github.com/google/apis-client-generator). Not currently published by Google.
 
 ## Clone
 - `git clone https://android.googlesource.com/platform/tools/studio/google/cloud/testing`
 - `git checkout studio-master-dev`
 - [Android Studio repo](https://android.googlesource.com/platform/tools/studio/google/cloud/testing/+/studio-master-dev/firebase-testing/lib)
-
-## Decompile
-
-[Fernflower](https://github.com/fesh0r/fernflower) is the preferred decompiler because it's open source and used by IntelliJ. [Cfr](http://www.benf.org/other/cfr/) is available for comparison.
-
-- `gradle --rerun-tasks decompileFern`
-- `gradle --rerun-tasks decompileCfr`
 
 ## Build
 
